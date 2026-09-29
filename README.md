@@ -2,18 +2,19 @@
 
 Static Hebrew news aggregator.
 
-## Live URL (Cloudflare quick tunnel)
+## Live URL
 
-**https://journalist-counties-structures-something.trycloudflare.com**
+**https://wily-harbor-377.harvis.page**
 
-Verified HTTP 200 with Hebrew content and `data/latest.json`.
+Deployed with `npx harvis` (no login). Verified HTTP 200, Hebrew `lang="he"`/`dir="rtl"`, and `data/latest.json`.
+
+Claim (private, single-use): https://harvis.dev/claim/81f67824-4846-4cd8-a6a5-7056cb08254e  
+Unclaimed sites expire after 24 hours; redeploy updates the same subdomain.
+
+Backup tunnel (while box processes run): https://journalist-counties-structures-something.trycloudflare.com
 
 ## Source
 
-Deploy from `/workspace/news-site/public` (index.html, app.js, styles.css, data/latest.json).
+`/workspace/news-site/public` — index.html, app.js, styles.css, data/latest.json
 
-## Notes
-
-- Netlify anonymous deploy hit daily limit; Surge requires login.
-- This tunnel stays up while the box keeps `python3 -m http.server` + `cloudflared` running.
-- GitHub Pages: enable Pages on this repo (Settings → Pages → Deploy from branch `main` / root) after remaining assets are pushed for a durable `*.github.io` URL.
+Repo: partial (index.html + README). Enable GitHub Pages after pushing remaining assets if you want `*.github.io`.
